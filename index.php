@@ -1,20 +1,24 @@
 <?php
 
-$fighterName = 'Arthur';
-$fighterHealth = 120;
-$fighterStrength = 10;
-$fighterConstitution = 10;
-$fighterAgility = 10;
-$fighterIntelligence = 10;
+require_once('Fighter.php');
+require_once('Fight.php');
+
+$fighter = new Fighter();
+$fighter->name = 'Arthur';
+$fighter->health = 120;
+$fighter->strength = 10;
+$fighter->constitution = 10;
+$fighter->agility = 10;
+$fighter->intelligence = 10;
 
 
-$opponentName = 'Lancelot';
-$opponentHealth = 100;
-$opponentStrength = 14;
-$opponentConstitution = 8;
-$opponentAgility = 6;
-$opponentIntelligence = 12;
-
+$opponent = new Fighter();
+$opponent->name = 'Lancelot';
+$opponent->health = 100;
+$opponent->strength = 14;
+$opponent->constitution = 8;
+$opponent->agility = 6;
+$opponent->intelligence = 12;
 
 
 
@@ -31,15 +35,7 @@ $opponentIntelligence = 12;
 
     <header>
         <?php   
-            $character = [
-                'name' => $fighterName,
-                'health' => $fighterHealth,
-                'strengh' => $fighterStrength,
-                'constitution' => $fighterConstitution,
-                'agility' => $fighterAgility,
-                'intelligence' => $fighterIntelligence,
-            ]; 
-            include "character.php"; 
+           echo $fighter->displayProperties();
         ?>
 
         <span class="title">
@@ -47,15 +43,7 @@ $opponentIntelligence = 12;
         </span>
 
         <?php 
-            $character = [
-                'name' => $opponentName,
-                'health' => $opponentHealth,
-                'strengh' => $opponentStrength,
-                'constitution' => $opponentConstitution,
-                'agility' => $opponentConstitution,
-                'intelligence' => $opponentIntelligence,
-            ];
-            include "character.php"; 
+            echo $opponent->displayProperties();
         ?>
     </header>
 
@@ -63,30 +51,8 @@ $opponentIntelligence = 12;
         <section id="fight_log">
             <?php
 
-            while(true) {
-
-                $damage = round(( rand(0, $fighterStrength * 1.5) - rand(0, $opponentConstitution /2)) / (100 -  rand(0, $opponentAgility)) * 100);
-                $damage = $damage > 0 ? $damage : 0;
-                $opponentHealth -= $damage;
-
-                echo "<p class='log'>$fighterName attaque $opponentName et cause $damage de dégats - 
-                il reste $opponentHealth de PV à $opponentName</p>";
-
-                if($opponentHealth <= 0) break;
-
-                $damage = round((  rand(0, $opponentStrength * 1.5) -  rand(0, $fighterConstitution /2) ) / (100 -  rand(0, $fighterAgility)) * 100);
-                $damage = $damage > 0 ? $damage : 0;
-                $fighterHealth -= $damage > 0 ? $damage : 0;
-
-                echo "<p class='log alignRight'>$opponentName attaque $fighterName et cause $damage de dégats - 
-                il reste $fighterHealth de PV à $fighterName</p>";
-
-                if($fighterHealth <= 0) break;
-                
-            }
-
-            if($fighterHealth <= 0) echo "<p class='conclusion'>$fighterName a perdu. Vive $opponentName<p>";
-            if($opponentName <= 0) echo "<p class='conclusion'>$opponentName a perdu. Vive $fighterName<p>";
+            $fight = new Fight($fighter, $opponent);
+            $fight->startFight();            
 
             ?>
         </section>
