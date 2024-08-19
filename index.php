@@ -1,24 +1,27 @@
 <?php
 
 require_once('Fighter.php');
+require_once('Warrior.php');
+require_once('Wizard.php');
 require_once('Fight.php');
 
-$fighter = new Fighter();
-$fighter->name = 'Arthur';
-$fighter->health = 120;
-$fighter->strength = 10;
-$fighter->constitution = 10;
-$fighter->agility = 10;
-$fighter->intelligence = 10;
+$fighter = new Warrior();
+$fighter->name = 'Conan';
+$fighter->health = 140;
+$fighter->strength = 12;
+$fighter->constitution = 14;
+$fighter->agility = 8;
+$fighter->intelligence = 3;
 
 
-$opponent = new Fighter();
-$opponent->name = 'Lancelot';
-$opponent->health = 100;
-$opponent->strength = 14;
+$opponent = new Wizard();
+$opponent->name = 'Merlin';
+$opponent->health = 80;
+$opponent->strength = 6;
 $opponent->constitution = 8;
-$opponent->agility = 6;
-$opponent->intelligence = 12;
+$opponent->agility = 9;
+$opponent->intelligence = 30;
+$opponent->mana = 50;
 
 
 
