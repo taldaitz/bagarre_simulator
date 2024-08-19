@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 58pt;
+}
+
+.character_panel {
+    margin: 15px 15%;
+    padding: 3rem;
+    border: 1px solid black;
+}
+
+main {
+    margin: auto;
+    margin-top: 7rem;
+    max-width: 1000px;
+}
+
+
+
+.log {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: bisque;
+    padding: 3px 8px;
+    display: inline-block;
+    font-size: large;
+}
+
+.alignRight {
+    float: right;
+    background-color: aquamarine;
+}
+
+#fight_log {
+    background-color: azure;
+    border: 1px solid black;
+    padding: 1rem 2.5rem;
+    height: 20rem;
+    overflow-y: scroll;
+}
+
+.conclusion {
+    text-align: center;
+    border: 1px solid black;
+    padding: 1.5rem;
+    margin-top: 3.5rem;
+}
