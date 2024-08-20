@@ -1,5 +1,7 @@
 <?php
 
+namespace Dawan\BagarreSimulator\Characters;
+
 abstract class Fighter {
     public string $name;
     public int $health;

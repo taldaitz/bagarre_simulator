@@ -1,5 +1,9 @@
 <?php
 
+namespace Dawan\BagarreSimulator\Game;
+
+use Dawan\BagarreSimulator\Characters\Fighter;
+
 class Fight 
 {
 

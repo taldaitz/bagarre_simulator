@@ -1,0 +1,16 @@
+{
+    "name": "dawan/bagarre_simulator",
+    "description": "Jeu de bagarre",
+    "autoload": {
+        "psr-4": {
+            "Dawan\\BagarreSimulator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thomas Aldaitz",
+            "email": "taldaitz@dawan.fr"
+        }
+    ],
+    "require": {}
+}

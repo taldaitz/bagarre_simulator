@@ -1,8 +1,15 @@
 <?php
 
+namespace Dawan\BagarreSimulator\Characters;
+
 class Wizard extends Fighter
 {
     public int $mana;
+
+    public function __construct(int $mana)
+    {
+        $this->mana = $mana;
+    }
 
     public function getJob(): string
     {
