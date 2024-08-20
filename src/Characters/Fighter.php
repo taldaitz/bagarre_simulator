@@ -15,34 +15,9 @@ abstract class Fighter {
 
     public abstract function getJob() : string;
 
-    public function displayRessources() : string
+    public function getRessources() : array
     {
-        return '<p>
-                    <span>PV : </span> ' . $this->health . '
-                </p>';
-    }
-
-    public function displayProperties()
-    {
-        return '
-            <section class="character_panel">
-            <h2>' . $this->name . '</h2>
-            <cite>' . $this->getJob() . '</cite>
-            <div class="character_energy">
-
-                ' . $this->displayRessources() . '
-
-            </div>
-            <div class="character_stats">
-                <ul>
-                    <li>Force : ' . $this->strength . '</li>
-                    <li>Constitution : ' . $this->constitution . '</li>
-                    <li>Agilité : ' . $this->agility . '</li>
-                    <li>Intelligence : ' . $this->intelligence . '</li>
-                </ul>
-            </div>
-        </section>
-        ';
+        return ['PV' => $this->health];
     }
 
     public function getAttack() : int

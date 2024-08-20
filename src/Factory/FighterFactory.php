@@ -7,11 +7,6 @@ use Dawan\BagarreSimulator\Builder\ArthurBuilder;
 use Dawan\BagarreSimulator\Builder\ConanBuilder;
 use Dawan\BagarreSimulator\Builder\MerlinBuilder;
 use Dawan\BagarreSimulator\Characters\Fighter;
-use Dawan\BagarreSimulator\Characters\Protection;
-use Dawan\BagarreSimulator\Characters\Thief;
-use Dawan\BagarreSimulator\Characters\Warrior;
-use Dawan\BagarreSimulator\Characters\Weapon;
-use Dawan\BagarreSimulator\Characters\Wizard;
 
 class FighterFactory 
 {
@@ -31,7 +26,7 @@ class FighterFactory
         
         if($choice == 'merlin') {
             $merlinBuilder = new MerlinBuilder();
-            return $merlinBuilder;
+            return $merlinBuilder->build();
         } 
 
         if($choice == 'arsene') {

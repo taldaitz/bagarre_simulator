@@ -3,12 +3,15 @@ require 'vendor/autoload.php';
 
 use Dawan\BagarreSimulator\Factory\FighterFactory;
 use Dawan\BagarreSimulator\Game\Fight;
+use Dawan\BagarreSimulator\Logger\DisplayLogger;
 
 $fighter1 = $_POST['fighter1'];
 $fighter2 = $_POST['fighter2'];
 
 $fighter = FighterFactory::getFighterInstance($fighter1);
 $opponent = FighterFactory::getFighterInstance($fighter2);
+
+$logger = new DisplayLogger;
 
 
 ?>
@@ -24,7 +27,7 @@ $opponent = FighterFactory::getFighterInstance($fighter2);
 
     <header>
         <?php   
-           echo $fighter->displayProperties();
+           echo $logger->logFighterPresentation($fighter);
         ?>
 
         <span class="title">
@@ -32,7 +35,7 @@ $opponent = FighterFactory::getFighterInstance($fighter2);
         </span>
 
         <?php 
-            echo $opponent->displayProperties();
+            echo $logger->logFighterPresentation($opponent);
         ?>
     </header>
 

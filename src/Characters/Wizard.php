@@ -16,13 +16,11 @@ class Wizard extends Fighter
         return 'Magicien';
     }
 
-    public function displayRessources() : string
+    public function getRessources() : array
     {
-        return  parent::displayRessources() . 
-                    '<p>
-                        <span>Mana : </span> ' . $this->mana . '
-                    </p>'
-        ;
+        $ressources = parent::getRessources();
+        $ressources['Mana'] = $this->mana;
+        return $ressources;
     }
 
     public function hit(Fighter $target): int
