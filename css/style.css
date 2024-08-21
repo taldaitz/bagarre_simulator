@@ -8,12 +8,20 @@ header {
     align-items: center;
 }
 
+#formSelection {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
 .title {
     font-size: 58pt;
 }
 
 .character_panel {
-    margin: 15px 15%;
+    margin: 10px 10%;
     padding: 3rem;
     border: 1px solid black;
 }
@@ -53,4 +61,9 @@ main {
     border: 1px solid black;
     padding: 1.5rem;
     margin-top: 3.5rem;
+}
+
+
+#fightBtn {
+    display: none;
 }

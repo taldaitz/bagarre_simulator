@@ -2,7 +2,8 @@
 
 namespace Dawan\BagarreSimulator\Characters;
 
-abstract class Fighter {
+
+abstract class Fighter implements BattleReady {
     public string $name;
     public int $health;
     public int $strength;

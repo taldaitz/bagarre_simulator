@@ -7,6 +7,16 @@ use Dawan\BagarreSimulator\Characters\Fighter;
 class DisplayLogger
 {
     private bool $alternateTurn = false;
+    private static DisplayLogger $instance;
+
+
+    public static function getInstance() : DisplayLogger
+    {
+        if(!isset(self::$instance))
+            self::$instance = new DisplayLogger();
+        return self::$instance;
+    }
+
 
     public function logFighterRessources(Fighter $fighter) : string 
     {

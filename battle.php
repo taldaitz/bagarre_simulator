@@ -11,7 +11,7 @@ $fighter2 = $_POST['fighter2'];
 $fighter = FighterFactory::getFighterInstance($fighter1);
 $opponent = FighterFactory::getFighterInstance($fighter2);
 
-$logger = new DisplayLogger;
+$logger = DisplayLogger::getInstance();
 
 
 ?>

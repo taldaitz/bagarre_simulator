@@ -2,21 +2,19 @@
 
 namespace Dawan\BagarreSimulator\Game;
 
-use Dawan\BagarreSimulator\Characters\Fighter;
+use Dawan\BagarreSimulator\Characters\BattleReady;
 use Dawan\BagarreSimulator\Logger\DisplayLogger;
 
 class Fight 
 {
 
-    private Fighter $fighter;
-    private Fighter $opponent;
-    private DisplayLogger $displayLogger;
+    private BattleReady $fighter;
+    private BattleReady $opponent;
 
-    public function __construct(Fighter $fighter, Fighter $opponent)
+    public function __construct(BattleReady $fighter, BattleReady $opponent)
     {
         $this->fighter = $fighter;
         $this->opponent = $opponent;
-        $this->displayLogger = new DisplayLogger();
     }
     
 
@@ -28,15 +26,15 @@ class Fight
         }
     }
 
-    public function playTurn(Fighter $attacker, Fighter $defender) : bool
+    public function playTurn(BattleReady $attacker, BattleReady $defender) : bool
     {
         $damage = $attacker->hit($defender);
         $defender->health -= $damage;
-        
-        $this->displayLogger->logAttack($attacker, $defender, $damage);
+
+        DisplayLogger::getInstance()->logAttack($attacker, $defender, $damage);
 
         if($defender->health <= 0) {
-            $this->displayLogger->logConclusion($attacker, $defender);
+            DisplayLogger::getInstance()->logConclusion($attacker, $defender);
             return true;
         } 
 
