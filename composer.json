@@ -12,5 +12,7 @@
             "email": "taldaitz@dawan.fr"
         }
     ],
-    "require": {}
+    "require": {
+        "symfony/http-client": "^7.1"
+    }
 }
