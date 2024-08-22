@@ -10,6 +10,7 @@ abstract class Fighter implements BattleReady {
     public int $constitution;
     public int $agility;
     public int $intelligence;
+    public ?int $webId = null;
 
     public ?Weapon $weapon = null;
     public ?Protection $protection = null;

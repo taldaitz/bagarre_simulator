@@ -18,7 +18,7 @@ use Symfony\Component\HttpClient\HttpClient;
     ];
 
     foreach($webCharacters as $webCharac) {
-        $charactList[$webCharac['name']] = $webCharac['name'] . ' - ' . $webCharac['job'];
+        $charactList[$webCharac['id']] = $webCharac['name'] . ' - ' . $webCharac['job'];
     }
 
 
